@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax-ex-04</title>
+    <!-- jQuery CDN   -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+<button onclick="ex04Fn()">ex04</button>
+</body>
+<script>
+    const ex04Fn = () =>{
+        const val1="hello mudong!!";
+        const params={
+            "param1":val1,
+            "param2": "안녕!!!!!"
+        };
+        $.ajax({
+            type: "post",
+            url: "/ex04",
+            data: params,
+            success: function(res){  // 요청 성공시 실행
+                console.log("성공",res);
+            },
+            error: function(){    //요청 실패시 실행
+                console.log("실패");
+            }
+        })
+    }
+</script>
+</html>

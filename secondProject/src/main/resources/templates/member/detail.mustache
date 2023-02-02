@@ -1,0 +1,26 @@
+{{>layouts/header}}
+
+<div>
+<table class="table table-horizontal table-bordered">
+    <thead class="thead-strong">
+    <tr>
+        <th>id</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+        <tr>
+            <td>{{member.id}}</td>
+            <td>{{member.memberEmail}}</td>
+            <td>{{member.memberPassword}}</td>
+            <td>{{member.memberName}}</td>
+            <td>
+                <a href="/member/update">수정</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+{{>layouts/footer}}

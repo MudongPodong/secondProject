@@ -1,0 +1,16 @@
+{{>layouts/header}}
+<form action="/member/login" method="post">
+    이메일: <input type="text" name="memberEmail"> <br>
+    비밀번호: <input type="text" name="memberPassword"> <br>
+
+    <input type="submit" value="로그인"> <br>
+    <p>
+        {{#result}}
+            {{result.memberName}}
+        {{/result}}
+        {{^result}}
+            로그인 먼저하세요!!!
+        {{/result}}
+    </p>
+</form>
+{{>layouts/footer}}

@@ -1,0 +1,10 @@
+{{>layouts/header}}
+<h2>로그인 성공!!!!</h2>
+현재세션 값 확인: <p>
+    {{#result}}
+        {{result.memberName}}
+    {{/result}}
+</p>
+<a href="/member/login">로그아웃</a>
+
+{{>layouts/footer}}

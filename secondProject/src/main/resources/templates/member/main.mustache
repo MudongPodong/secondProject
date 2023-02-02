@@ -1,0 +1,79 @@
+{{>layouts/header}}
+<h2>로그인 성공!!!!</h2>
+현재세션 값 확인: <p>
+    {{#result}}
+    {{result.memberName}}
+    {{/result}}
+</p>
+<a href="/member/logout">로그아웃</a>
+<br><br><br>
+<div>
+<table class="table table-horizontal table-bordered">
+    <thead class="thead-strong">
+    <tr>
+        <th>id</th>
+        <th>memberEmail</th>
+        <th>memberPassword</th>
+        <th>memberName</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    {{#memberList}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{memberEmail}}</td>
+        <td>{{memberPassword}}</td>
+        <td>{{memberName}}</td>
+        <td>
+            <a href="/member/{{id}}">조회</a>
+        </td>
+        <td>
+            <a href="/member/delete/{{id}}">삭제</a>
+        </td>
+    </tr>
+    {{/memberList}}
+
+    </tbody>
+</table>
+
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>{{rank}}</th>
+            <th>{{name}}</th>
+            <th>{{searchrate}}</th>
+            <th>{{presentprice}}</th>
+            <th>{{updown}}</th>
+            <th>{{quantity}}</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#contents}}
+            <tr>
+                <td>{{rank}}</td>
+                <td>{{name}}</td>
+                <td>{{rate}}</td>
+                <td>{{presentprice}}</td>
+                <td>{{updown}}</td>
+                <td>{{quantity}}</td>
+            </tr>
+        {{/contents}}
+
+        </tbody>
+    </table>
+
+
+    <hr><h2>ajax 목록</h2><hr>
+    <a href="/ajax-ex-01">01_get 요청하기</a>
+    <hr>
+    <a href="/ajax-ex-02">02_post 요청하기</a>
+    <hr><a href="/ajax-ex-03">03_get 요청 & parameter 전달하기</a>
+    <hr><a href="/ajax-ex-04">04_post 요청 & parameter 전달하기</a>
+    <hr><a href="/ajax-ex-05">05_get 요청 & parameter DTO로 받기(@ModelAttribute) & DTO 객체 리턴 하기</a>
+    <hr><a href="/ajax-ex-06">06_post 요청 & parameter DTO로 받기(@ModelAttribute) & DTO 객체 리턴 하기</a>
+    <hr><a href="/ajax-ex-07">07_post 요청 & parameter DTO로 받기(@RequestBody) & DTO 객체 리턴 하기</a>
+    <hr><a href="/ajax-ex-08">08_post 요청 & parameter 전달하기 & List 객체 리턴 하기</a>
+    <hr><a href="/ajax-ex-09">09_post 요청 & parameter 전달하기 & ResponseEntity에 DTO 객체 리턴 하기</a>
+    <hr><a href="/ajax-ex-10">10_post 요청 & parameter 전달하기 & ResponseEntity에 List 객체 리턴 하기</a>
+</div>
+{{>layouts/footer}}

@@ -1,0 +1,10 @@
+{{>layouts/header}}
+
+<form action="/member/update" method="post">
+    <input type="hidden" value="{{updateMember.id}}" name="id"><br>
+    이메일: <input type="text" value="{{updateMember.memberEmail}}" name="memberEmail" readonly> <br>
+    비밀번호: <input type="text" value="{{updateMember.memberPassword}}" name="memberPassword"> <br>
+    이름: <input type="text" value="{{updateMember.memberName}}" name="memberName"> <br>
+    <input type="submit" value="정보수정">
+</form>
+{{>layouts/footer}}
