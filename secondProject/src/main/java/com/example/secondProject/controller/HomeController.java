@@ -221,6 +221,7 @@ public class HomeController {
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
             int count=0;
+            System.out.println("업뎃ㅅㄱ요");
             //만약 리스트별로 뽑고 싶을때는 원하는 범위는 인덱싱 안해도됨
             List<WebElement> players=driver.findElements(By.xpath("//*[@id=\"divPlayerList\"]/div/div[1]/div/div[4]/div[2]"));
             for(WebElement player:players){
