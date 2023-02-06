@@ -98,7 +98,7 @@ public class HomeController {
         model.addAttribute("quantity",stockTitle[6]);
 
         model.addAttribute("contents",contents);
-        chrome();
+        //chrome();
         return "/member/main";
     }
 
@@ -187,6 +187,11 @@ public class HomeController {
         return stockDTOList;
     }
 
+    @GetMapping("/member/chatgpt")
+    public String chatgpt(HttpSession session){
+        return "/member/chatgpt";
+    }
+
     private void chrome(){   //셀레니움
         System.setProperty(WEB_DRIVER_ID,WEB_DRIVER_PATH);
         ChromeOptions options=new ChromeOptions();
@@ -221,7 +226,6 @@ public class HomeController {
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
             int count=0;
-            System.out.println("업뎃ㅅㄱhg요");
             //만약 리스트별로 뽑고 싶을때는 원하는 범위는 인덱싱 안해도됨
             List<WebElement> players=driver.findElements(By.xpath("//*[@id=\"divPlayerList\"]/div/div[1]/div/div[4]/div[2]"));
             for(WebElement player:players){
